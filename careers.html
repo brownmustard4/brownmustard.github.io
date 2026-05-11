@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — Brown Mustard Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .careers-intro-section { background: var(--surface); }
+
+    .careers-intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .careers-intro-grid p {
+      font-size: 1.0625rem;
+      color: var(--ink-muted);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .careers-intro-grid .btn { margin-top: 0.75rem; }
+
+    .perks-full {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .perk-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 1.75rem;
+    }
+
+    .perk-card-icon {
+      width: 40px; height: 40px;
+      background: var(--mustard-light);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .perk-card-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--mustard-dark); fill: none;
+      stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .perk-card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .perk-card-desc { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.65; }
+
+    /* Open Roles */
+    .roles-section { background: var(--surface-alt); }
+
+    .roles-note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .roles-note h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .roles-note p {
+      font-size: 1rem;
+      color: var(--ink-muted);
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* CTA */
+    .careers-cta {
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 2.5rem;
+    }
+
+    .careers-cta .section-label { color: var(--mustard); }
+
+    .careers-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .careers-cta p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.0625rem;
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .careers-intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-eyebrow">Careers</p>
+      <h1>Join the Brown Mustard team</h1>
+      <p>We're always looking for good people who take pride in their work. Come be part of something worth building.</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="section careers-intro-section">
+    <div class="container">
+      <div class="careers-intro-grid">
+        <div>
+          <p class="section-label">Why Join Us</p>
+          <h2 class="section-title">Work with people who care</h2>
+          <p>At Brown Mustard, we believe the best businesses are built by the best people — and that means investing in our team, not just our bottom line.</p>
+          <p>Whether you're experienced in your field or starting your career, we offer a place where your contribution matters, your growth is supported, and the work you do makes a real difference.</p>
+          <p>We're a small group, which means you'll never be just a number. You'll know the people you work with, the customers you serve, and the impact you're having.</p>
+          <a href="mailto:hello@brownmustard.co.nz?subject=Career Enquiry" class="btn">Get In Touch</a>
+        </div>
+        <div>
+          <p class="section-label">What We Offer</p>
+          <div class="perks-full" style="margin-top:1rem">
+            <div class="perk-card">
+              <div class="perk-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="perk-card-title">Supportive Team</div>
+              <div class="perk-card-desc">We look out for each other. Leadership is accessible and decisions are made with people in mind.</div>
+            </div>
+            <div class="perk-card">
+              <div class="perk-card-icon">
+                <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="perk-card-title">Room to Grow</div>
+              <div class="perk-card-desc">We invest in our people for the long haul. As the group grows, so do the opportunities.</div>
+            </div>
+            <div class="perk-card">
+              <div class="perk-card-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="perk-card-title">Flexible & Fair</div>
+              <div class="perk-card-desc">We respect your time and your life outside work. Flexibility where it makes sense.</div>
+            </div>
+            <div class="perk-card">
+              <div class="perk-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div class="perk-card-title">NZ Based</div>
+              <div class="perk-card-desc">All our roles are based right here in New Zealand. Local work, local community.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN ROLES -->
+  <section class="section roles-section">
+    <div class="container">
+      <p class="section-label">Open Roles</p>
+      <h2 class="section-title">Current opportunities</h2>
+      <div class="roles-note">
+        <h3>No specific roles listed right now</h3>
+        <p>We don't always advertise — often our best hires come from people who reach out directly. If you think you'd be a good fit for any of our businesses, we'd still love to hear from you.</p>
+        <a href="mailto:hello@brownmustard.co.nz?subject=Career Enquiry" class="btn">Send Us Your Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="careers-cta">
+    <p class="section-label">Ready to Join?</p>
+    <h2>We'd love to hear from you</h2>
+    <p>Drop us an email and tell us a bit about yourself. No formal application needed — just say hello.</p>
+    <a href="mailto:hello@brownmustard.co.nz?subject=Career Enquiry" class="btn">hello@brownmustard.co.nz</a>
+  </section>
+
+  <script src="nav.js"></script>
+</body>
+</html>

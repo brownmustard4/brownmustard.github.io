@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Brown Mustard Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-body { background: var(--surface); }
+
+    .about-intro {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+
+    .about-intro p {
+      font-size: 1.0625rem;
+      color: var(--ink-muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.8;
+    }
+
+    .about-pull {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.5;
+      border-left: 3px solid var(--mustard);
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Values */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .value-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 1.75rem;
+    }
+
+    .value-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--mustard);
+      opacity: 0.4;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .value-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .value-desc { font-size: 0.9375rem; color: var(--ink-muted); line-height: 1.65; }
+
+    /* Story section */
+    .story-section { background: var(--surface-alt); }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .story-grid p {
+      font-size: 1.0625rem;
+      color: var(--ink-muted);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .story-accent {
+      background: var(--mustard);
+      border-radius: 2px;
+      padding: 2rem;
+      color: #fff;
+    }
+
+    .story-accent h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .story-accent p { color: rgba(255,255,255,0.8); margin-bottom: 0; font-size: 1rem; }
+
+    @media (max-width: 768px) {
+      .about-intro, .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body class="about-body">
+
+  <!-- nav injected -->
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-eyebrow">About Us</p>
+      <h1>A group built on doing things properly</h1>
+      <p>We're a New Zealand business group with a straightforward philosophy — do good work, treat people well, and build things that last.</p>
+    </div>
+  </div>
+
+  <!-- MAIN ABOUT -->
+  <section class="section about-body">
+    <div class="container">
+      <div class="about-intro">
+        <div>
+          <p>Brown Mustard Ltd is a New Zealand-owned business group that invests in and operates a range of hands-on businesses. We're not a large corporate — we're a group that gets involved, rolls up its sleeves, and takes ownership of outcomes.</p>
+          <p>Each business in our group operates with its own identity, team, and expertise. What unites them is a shared set of values: professionalism, reliability, and genuine care for the people we work with and for.</p>
+          <p>We focus on long-term relationships over quick wins — with our customers, our people, and the communities we're part of. That means being honest about what we can do, delivering what we promise, and being the kind of business people are glad to deal with.</p>
+        </div>
+        <div>
+          <p class="about-pull">"Do good work, treat people well, and build things that last."</p>
+        </div>
+      </div>
+
+      <!-- Values -->
+      <p class="section-label">Our Values</p>
+      <h2 class="section-title">What guides us</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-num">01</div>
+          <div class="value-title">Quality</div>
+          <div class="value-desc">We hold our work to a high standard — not because it's required, but because we take pride in it.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-num">02</div>
+          <div class="value-title">Reliability</div>
+          <div class="value-desc">If we say we'll do something, we do it. Consistency builds the trust that makes good businesses great.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-num">03</div>
+          <div class="value-title">Respect</div>
+          <div class="value-desc">For our customers, our teams, and our communities. Every interaction is an opportunity to leave a positive impression.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-num">04</div>
+          <div class="value-title">Ownership</div>
+          <div class="value-desc">We take responsibility for outcomes — the good and the not-so-good — and we're always looking to improve.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div>
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">Where we're coming from</h2>
+          <p>Brown Mustard Ltd was founded with the belief that a small group of well-run, focused businesses is more valuable than a sprawling conglomerate. We'd rather do a few things exceptionally well than many things adequately.</p>
+          <p>We're proudly New Zealand owned and operated, and every decision we make is with an eye on what's best for our customers, our people, and the long-term health of the businesses we operate.</p>
+        </div>
+        <div class="story-accent">
+          <h3>Proudly New Zealand</h3>
+          <p>Based in New Zealand and committed to our local communities. Everything we do, we do right here — and we're proud of that.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="nav.js"></script>
+</body>
+</html>

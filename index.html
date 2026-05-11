@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brown Mustard Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 2.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -10%; right: -5%;
+      width: 55%; height: 110%;
+      background: var(--mustard-light);
+      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mustard);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.75rem, 6vw, 5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--mustard); }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      color: var(--ink-muted);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── HOME SECTIONS ── */
+    .home-about { background: var(--surface); }
+    .home-businesses { background: var(--surface-alt); }
+    .home-careers { background: var(--ink); color: #fff; }
+    .home-contact { background: var(--surface); }
+
+    /* About grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--ink-muted);
+      margin-bottom: 1rem;
+      font-size: 1.0625rem;
+    }
+
+    .about-text .btn { margin-top: 0.5rem; }
+
+    .about-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 2px;
+    }
+
+    .stat-card.accent {
+      grid-column: span 2;
+      background: var(--mustard);
+      border-color: var(--mustard);
+    }
+
+    .stat-card.accent .stat-num,
+    .stat-card.accent .stat-label { color: #fff; }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    /* Businesses */
+    .biz-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .biz-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .biz-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--mustard);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s;
+    }
+
+    .biz-card:hover { border-color: var(--mustard); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(197,147,58,0.12); }
+    .biz-card:hover::after { transform: scaleX(1); }
+
+    .biz-icon {
+      width: 44px; height: 44px;
+      background: var(--mustard-light);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .biz-icon svg {
+      width: 22px; height: 22px;
+      stroke: var(--mustard-dark); fill: none;
+      stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .biz-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .biz-card p { font-size: 0.9375rem; color: var(--ink-muted); margin-bottom: 1.25rem; }
+
+    .card-link {
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--mustard); display: flex; align-items: center; gap: 0.35rem;
+    }
+
+    .card-link svg {
+      width: 13px; height: 13px;
+      stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      transition: transform 0.2s;
+    }
+
+    .biz-card:hover .card-link svg { transform: translateX(3px); }
+
+    /* Careers teaser */
+    .careers-teaser {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .home-careers .section-label { color: var(--mustard); }
+    .home-careers .section-title { color: #fff; }
+
+    .careers-teaser-text p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.0625rem;
+      margin-bottom: 1rem;
+    }
+
+    .careers-teaser-text .btn { margin-top: 0.5rem; }
+
+    .perks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .perk {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+      padding: 1.25rem;
+    }
+
+    .perk-title { font-size: 0.9375rem; font-weight: 500; color: #fff; margin-bottom: 0.3rem; }
+    .perk-desc { font-size: 0.8125rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+    /* Contact teaser */
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-row-text h2 { margin-bottom: 0.5rem; }
+    .contact-row-text p { color: var(--ink-muted); font-size: 1.0625rem; }
+
+    .contact-email-link {
+      font-size: 1.25rem;
+      font-family: 'Playfair Display', serif;
+      color: var(--mustard);
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .contact-email-link:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .about-grid, .careers-teaser { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { display: none; }
+      .perks { grid-template-columns: 1fr; }
+      .contact-row { flex-direction: column; align-items: flex-start; }
+      .hero::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- nav injected by nav.js -->
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Brown Mustard Ltd &mdash; New Zealand</p>
+      <h1>Building businesses that <em>matter</em></h1>
+      <p class="hero-sub">A group of hands-on businesses driven by quality, reliability, and care for our communities.</p>
+      <div class="hero-buttons">
+        <a href="businesses.html" class="btn">Our Businesses</a>
+        <a href="about.html" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <section class="section home-about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label">About Us</p>
+          <h2 class="section-title">A group built on doing things properly</h2>
+          <p>Brown Mustard Ltd is a New Zealand business group with a straightforward philosophy: do good work, treat people well, and build things that last.</p>
+          <p>We invest in and operate businesses across a range of industries, sharing a common commitment to professionalism and reliability.</p>
+          <a href="about.html" class="btn btn-outline">Read More</a>
+        </div>
+        <div class="about-visual">
+          <div class="stat-card accent">
+            <div class="stat-num">Local</div>
+            <div class="stat-label">Proudly New Zealand owned &amp; operated</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">Quality</div>
+            <div class="stat-label">High standards across every business</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">People</div>
+            <div class="stat-label">Teams who take pride in their work</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESSES TEASER -->
+  <section class="section home-businesses">
+    <div class="container">
+      <p class="section-label">Our Businesses</p>
+      <h2 class="section-title">What we do</h2>
+      <div class="biz-grid">
+        <a href="https://www.bmmowing.co.nz" target="_blank" rel="noopener" class="biz-card">
+          <div class="biz-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 17h18M7 17V9l4-4h6l2 4v8M7 13h10"/><circle cx="9" cy="19" r="2"/><circle cx="16" cy="19" r="2"/></svg>
+          </div>
+          <h3>BM Mowing</h3>
+          <p>Professional lawn mowing and grounds maintenance services. Reliable, tidy, and done right every time.</p>
+          <span class="card-link">Visit bmmowing.co.nz <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREERS TEASER -->
+  <section class="section home-careers">
+    <div class="container">
+      <div class="careers-teaser">
+        <div class="careers-teaser-text">
+          <p class="section-label">Careers</p>
+          <h2 class="section-title">Join the team</h2>
+          <p>We're always looking for good people who take pride in their work. Whether you're experienced or just starting out, we'd love to hear from you.</p>
+          <a href="careers.html" class="btn">See Opportunities</a>
+        </div>
+        <div class="perks">
+          <div class="perk"><div class="perk-title">Supportive Culture</div><div class="perk-desc">We look out for each other and lead with respect.</div></div>
+          <div class="perk"><div class="perk-title">Room to Grow</div><div class="perk-desc">We invest in our people for the long haul.</div></div>
+          <div class="perk"><div class="perk-title">Hands-On Work</div><div class="perk-desc">Real work with real outcomes you can be proud of.</div></div>
+          <div class="perk"><div class="perk-title">NZ Based</div><div class="perk-desc">All our businesses operate right here in New Zealand.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT TEASER -->
+  <section class="section home-contact">
+    <div class="container">
+      <div class="contact-row">
+        <div class="contact-row-text">
+          <p class="section-label">Contact</p>
+          <h2 class="section-title">Get in touch</h2>
+          <p>We'd love to hear from you — whether you're a customer, supplier, or prospective team member.</p>
+        </div>
+        <a href="mailto:hello@brownmustard.co.nz" class="contact-email-link">hello@brownmustard.co.nz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer injected by nav.js -->
+  <script src="nav.js"></script>
+</body>
+</html>

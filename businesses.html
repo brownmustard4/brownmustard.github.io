@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Businesses — Brown Mustard Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .biz-section { background: var(--surface); }
+
+    .biz-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .biz-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr auto;
+      gap: 3rem;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 2.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .biz-row::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--mustard);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.25s;
+    }
+
+    .biz-row:hover { border-color: var(--mustard); box-shadow: 0 4px 20px rgba(197,147,58,0.1); }
+    .biz-row:hover::before { transform: scaleY(1); }
+
+    .biz-row-identity { display: flex; flex-direction: column; }
+
+    .biz-row-icon {
+      width: 52px; height: 52px;
+      background: var(--mustard-light);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .biz-row-icon svg {
+      width: 26px; height: 26px;
+      stroke: var(--mustard-dark); fill: none;
+      stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .biz-row-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .biz-row-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mustard);
+    }
+
+    .biz-row-desc {
+      font-size: 1rem;
+      color: var(--ink-muted);
+      line-height: 1.75;
+    }
+
+    .biz-row-desc p { margin-bottom: 0.75rem; }
+    .biz-row-desc p:last-child { margin-bottom: 0; }
+
+    .biz-row-action { text-align: right; }
+
+    .biz-visit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.5rem;
+      background: var(--mustard);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .biz-visit-btn:hover { background: var(--mustard-dark); transform: translateY(-1px); }
+
+    .biz-visit-btn svg {
+      width: 14px; height: 14px;
+      stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .biz-url {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--ink-muted);
+      margin-top: 0.5rem;
+      text-align: right;
+    }
+
+    /* More coming soon */
+    .coming-soon {
+      background: var(--surface-alt);
+      border: 1px dashed var(--border);
+      border-radius: 2px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .coming-soon p {
+      color: var(--ink-muted);
+      font-size: 0.9375rem;
+    }
+
+    .coming-soon strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .biz-row { grid-template-columns: 1fr; gap: 1.5rem; }
+      .biz-row-action { text-align: left; }
+      .biz-url { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-eyebrow">Our Businesses</p>
+      <h1>What we do</h1>
+      <p>A growing group of hands-on businesses, each focused on delivering real value to their customers.</p>
+    </div>
+  </div>
+
+  <section class="section biz-section">
+    <div class="container">
+
+      <div class="biz-list">
+
+        <!-- BM Mowing -->
+        <div class="biz-row">
+          <div class="biz-row-identity">
+            <div class="biz-row-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 17h18M7 17V9l4-4h6l2 4v8M7 13h10"/><circle cx="9" cy="19" r="2"/><circle cx="16" cy="19" r="2"/></svg>
+            </div>
+            <div class="biz-row-name">BM Mowing</div>
+            <div class="biz-row-tag">Lawn &amp; Grounds</div>
+          </div>
+          <div class="biz-row-desc">
+            <p>BM Mowing provides professional lawn mowing and grounds maintenance services. Built on reliability and a high standard of finish, the team takes pride in making properties look their best.</p>
+            <p>Whether it's a regular residential lawn or a larger commercial property, BM Mowing delivers consistent, quality results every visit.</p>
+          </div>
+          <div class="biz-row-action">
+            <a href="https://www.bmmowing.co.nz" target="_blank" rel="noopener" class="biz-visit-btn">
+              Visit Website
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+            <span class="biz-url">bmmowing.co.nz</span>
+          </div>
+        </div>
+
+        <!-- Coming soon placeholder -->
+        <div class="coming-soon">
+          <strong>More businesses coming soon</strong>
+          <p>The Brown Mustard group continues to grow. Watch this space for new additions.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="nav.js"></script>
+</body>
+</html>
